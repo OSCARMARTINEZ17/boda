@@ -18,7 +18,7 @@
 
 <body>
 
-    <!-- SOBRE -->
+    <!-- SOBRE DE BIENVENIDA -->
 
     <div id="envelope">
 
@@ -103,7 +103,8 @@
         <p class="story">
 
             Después de compartir momentos inolvidables,
-            aventuras y sueños, hemos decidido unir nuestras vidas.
+            aventuras, sueños y muchísimas sonrisas,
+            hemos decidido unir nuestras vidas para siempre.
 
             Queremos celebrar este día tan especial contigo.
 
@@ -119,18 +120,25 @@
             Nuestros Momentos
         </h2>
 
-        <div class="slider">
+        <div class="gallery">
 
-            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800" alt="">
-            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800" alt="">
-            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=800" alt="">
-            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800" alt="">
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800"
+                alt="Momento especial 1">
+
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800"
+                alt="Momento especial 2">
+
+            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=800"
+                alt="Momento especial 3">
+
+            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800"
+                alt="Momento especial 4">
 
         </div>
 
     </section>
 
-    <!-- DETALLES -->
+    <!-- DETALLES DEL EVENTO -->
 
     <section id="evento" class="reveal">
 
@@ -177,15 +185,13 @@
             loading="lazy">
         </iframe>
 
-        <br>
-        <br>
+        <br><br>
 
-        <a
-            href="https://maps.google.com/?q=Bogota"
+        <a href="https://maps.google.com/?q=Bogota"
             target="_blank"
             class="btn">
 
-            📍 Cómo llegar
+            📍 Cómo Llegar
 
         </a>
 
@@ -193,29 +199,65 @@
 
     <!-- CONFIRMACIÓN -->
 
-    <section id="rsvp" class="reveal">
+    <section id="confirmacion" class="reveal">
 
         <h2 class="section-title">
             Confirma tu Asistencia
         </h2>
+
+        <p class="texto-confirmacion">
+            Tu respuesta es muy importante para nosotros ❤️
+        </p>
 
         <input
             type="text"
             id="nombre"
             placeholder="Nombre completo">
 
+        <div class="asistencia-opciones">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="asistencia"
+                    value="si"
+                    checked
+                    onchange="cambiarAsistencia()">
+
+                ✅ Sí asistiré
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="asistencia"
+                    value="no"
+                    onchange="cambiarAsistencia()">
+
+                ❌ No podré asistir
+
+            </label>
+
+        </div>
+
         <input
             type="number"
             id="acompanantes"
+            min="0"
+            max="10"
+            value="0"
             placeholder="Número de acompañantes">
 
         <button onclick="confirmarWhatsapp()">
-            ✅ Confirmar Asistencia
+            📩 Enviar Respuesta
         </button>
 
     </section>
 
-    <!-- MÚSICA -->
+    <!-- CANCIÓN -->
 
     <section class="reveal">
 
@@ -235,6 +277,25 @@
 
     </section>
 
+    <!-- MENSAJE FINAL -->
+
+    <section class="reveal">
+
+        <h2 class="section-title">
+            Te Esperamos
+        </h2>
+
+        <p class="story">
+
+            Gracias por ser parte de nuestra historia.
+
+            Esperamos compartir contigo este día tan especial
+            y crear recuerdos inolvidables juntos. ❤️
+
+        </p>
+
+    </section>
+
     <!-- FOOTER -->
 
     <footer>
@@ -245,23 +306,31 @@
 
     </footer>
 
-    <!-- MENÚ INFERIOR -->
+    <!-- MENÚ FLOTANTE -->
 
     <nav class="bottom-nav">
 
-        <a href="#contador">⏳</a>
+        <a href="#contador" title="Contador">
+            ⏳
+        </a>
 
-        <a href="#historia">❤️</a>
+        <a href="#historia" title="Historia">
+            ❤️
+        </a>
 
-        <a href="#galeria">📸</a>
+        <a href="#galeria" title="Galería">
+            📸
+        </a>
 
-        <a href="#ubicacion">📍</a>
+        <a href="#ubicacion" title="Ubicación">
+            📍
+        </a>
 
-        <a href="#rsvp">✅</a>
+        <a href="#confirmacion" title="Confirmación">
+            ✅
+        </a>
 
     </nav>
-
-    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 
