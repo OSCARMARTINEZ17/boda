@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestra Boda</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>María & Juan</h1>
+
+            <h2>¡Nos Casamos!</h2>
+
+            <p>20 de Diciembre de 2026</p>
+
+            <a href="#contador" class="btn">Ver Invitación</a>
+
+        </div>
+
+    </section>
+
+    <!-- CONTADOR -->
+    <section id="contador">
+
+        <h2 class="section-title">Faltan</h2>
+
+        <div class="countdown">
+
+            <div class="box">
+                <span id="days">0</span>
+                <p>Días</p>
+            </div>
+
+            <div class="box">
+                <span id="hours">0</span>
+                <p>Horas</p>
+            </div>
+
+            <div class="box">
+                <span id="minutes">0</span>
+                <p>Minutos</p>
+            </div>
+
+            <div class="box">
+                <span id="seconds">0</span>
+                <p>Segundos</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HISTORIA -->
+    <section>
+
+        <h2 class="section-title">Nuestra Historia</h2>
+
+        <div class="story">
+
+            <p>
+                Dos corazones, un mismo destino.
+                Después de años compartiendo sueños,
+                aventuras y momentos inolvidables,
+                hemos decidido dar el paso más importante
+                de nuestras vidas.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- GALERÍA -->
+    <section>
+
+        <h2 class="section-title">Nuestros Momentos</h2>
+
+        <div class="gallery">
+
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800" alt="">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800" alt="">
+            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=800" alt="">
+            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800" alt="">
+
+        </div>
+
+    </section>
+
+    <!-- EVENTO -->
+    <section>
+
+        <h2 class="section-title">Detalles</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>💒 Ceremonia</h3>
+                <p>4:00 PM</p>
+                <p>Iglesia San José</p>
+            </div>
+
+            <div class="card">
+                <h3>🎉 Recepción</h3>
+                <p>7:00 PM</p>
+                <p>Salón Los Olivos</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section>
+
+        <h2 class="section-title">Ubicación</h2>
+
+        <iframe
+            src="https://maps.google.com/maps?q=Bogota&t=&z=13&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+
+    </section>
+
+    <!-- RSVP -->
+    <section>
+
+        <h2 class="section-title">Confirma tu Asistencia</h2>
+
+        <form id="rsvpForm">
+
+            <input type="text" placeholder="Nombre completo" required>
+
+            <select required>
+                <option value="">¿Asistirás?</option>
+                <option>Sí asistiré</option>
+                <option>No podré asistir</option>
+            </select>
+
+            <input type="number" placeholder="Número de acompañantes">
+
+            <button type="submit">
+                Confirmar Asistencia
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- MÚSICA -->
+    <section>
+
+        <h2 class="section-title">Nuestra Canción</h2>
+
+        <audio controls>
+            <source src="musica/musica.mp3" type="audio/mpeg">
+        </audio>
+
+    </section>
+
+    <footer>
+        <p>Con amor ❤️ María & Juan</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
