@@ -2,45 +2,20 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>María & Juan | Nuestra Boda</title>
+    <title>Nuestra Boda</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
-        rel="stylesheet">
-
 </head>
 
 <body>
 
-    <!-- SOBRE -->
-
-    <div id="envelope">
-
-        <div class="letter">
-
-            <h2>💌</h2>
-
-            <h1>María & Juan</h1>
-
-            <p>20 de Diciembre de 2026</p>
-
-            <button id="openInvitation">
-                Abrir Invitación
-            </button>
-
-        </div>
-
-    </div>
-
-    <!-- PORTADA -->
-
-    <section class="hero reveal">
+    <!-- HERO -->
+    <section class="hero">
 
         <div class="hero-content">
 
@@ -50,21 +25,16 @@
 
             <p>20 de Diciembre de 2026</p>
 
-            <a href="#contador" class="btn">
-                Ver Invitación
-            </a>
+            <a href="#contador" class="btn">Ver Invitación</a>
 
         </div>
 
     </section>
 
     <!-- CONTADOR -->
+    <section id="contador">
 
-    <section id="contador" class="reveal">
-
-        <h2 class="section-title">
-            Faltan
-        </h2>
+        <h2 class="section-title">Faltan</h2>
 
         <div class="countdown">
 
@@ -93,33 +63,30 @@
     </section>
 
     <!-- HISTORIA -->
+    <section>
 
-    <section id="historia" class="reveal">
+        <h2 class="section-title">Nuestra Historia</h2>
 
-        <h2 class="section-title">
-            Nuestra Historia
-        </h2>
+        <div class="story">
 
-        <p class="story">
+            <p>
+                Dos corazones, un mismo destino.
+                Después de años compartiendo sueños,
+                aventuras y momentos inolvidables,
+                hemos decidido dar el paso más importante
+                de nuestras vidas.
+            </p>
 
-            Después de compartir momentos inolvidables,
-            aventuras y sueños, hemos decidido unir nuestras vidas.
-
-            Queremos celebrar este día tan especial contigo.
-
-        </p>
+        </div>
 
     </section>
 
     <!-- GALERÍA -->
+    <section>
 
-    <section id="galeria" class="reveal">
+        <h2 class="section-title">Nuestros Momentos</h2>
 
-        <h2 class="section-title">
-            Nuestros Momentos
-        </h2>
-
-        <div class="slider">
+        <div class="gallery">
 
             <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800" alt="">
             <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800" alt="">
@@ -130,34 +97,23 @@
 
     </section>
 
-    <!-- DETALLES -->
+    <!-- EVENTO -->
+    <section>
 
-    <section id="evento" class="reveal">
-
-        <h2 class="section-title">
-            Detalles del Evento
-        </h2>
+        <h2 class="section-title">Detalles</h2>
 
         <div class="cards">
 
             <div class="card">
-
                 <h3>💒 Ceremonia</h3>
-
                 <p>4:00 PM</p>
-
                 <p>Iglesia San José</p>
-
             </div>
 
             <div class="card">
-
                 <h3>🎉 Recepción</h3>
-
                 <p>7:00 PM</p>
-
                 <p>Salón Los Olivos</p>
-
             </div>
 
         </div>
@@ -165,106 +121,57 @@
     </section>
 
     <!-- UBICACIÓN -->
+    <section>
 
-    <section id="ubicacion" class="reveal">
-
-        <h2 class="section-title">
-            Ubicación
-        </h2>
+        <h2 class="section-title">Ubicación</h2>
 
         <iframe
-            src="https://maps.google.com/maps?q=Bogota&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            loading="lazy">
+            src="https://maps.google.com/maps?q=Bogota&t=&z=13&ie=UTF8&iwloc=&output=embed">
         </iframe>
-
-        <br>
-        <br>
-
-        <a
-            href="https://maps.google.com/?q=Bogota"
-            target="_blank"
-            class="btn">
-
-            📍 Cómo llegar
-
-        </a>
 
     </section>
 
-    <!-- CONFIRMACIÓN -->
+    <!-- RSVP -->
+    <section>
 
-    <section id="rsvp" class="reveal">
+        <h2 class="section-title">Confirma tu Asistencia</h2>
 
-        <h2 class="section-title">
-            Confirma tu Asistencia
-        </h2>
+        <form id="confirmacion">
 
-        <input
-            type="text"
-            id="nombre"
-            placeholder="Nombre completo">
+            <input type="text" placeholder="Nombre completo" required>
 
-        <input
-            type="number"
-            id="acompanantes"
-            placeholder="Número de acompañantes">
+            <select required>
+                <option value="">¿Asistirás?</option>
+                <option>Sí asistiré</option>
+                <option>No podré asistir</option>
+            </select>
 
-        <button onclick="confirmarWhatsapp()">
-            ✅ Confirmar Asistencia
-        </button>
+            <input type="number" placeholder="Número de acompañantes">
+
+            <button type="submit">
+                Confirmar Asistencia
+            </button>
+
+        </form>
 
     </section>
 
     <!-- MÚSICA -->
+    <section>
 
-    <section class="reveal">
-
-        <h2 class="section-title">
-            Nuestra Canción
-        </h2>
+        <h2 class="section-title">Nuestra Canción</h2>
 
         <audio controls>
-
-            <source
-                src="musica/cancion.mp3"
-                type="audio/mpeg">
-
-            Tu navegador no soporta audio.
-
+            <source src="musica/musica.mp3" type="audio/mpeg">
         </audio>
 
     </section>
 
-    <!-- FOOTER -->
-
     <footer>
-
-        <p>
-            Con amor ❤️ María & Juan
-        </p>
-
+        <p>Con amor ❤️ María & Juan</p>
     </footer>
-
-    <!-- MENÚ INFERIOR -->
-
-    <nav class="bottom-nav">
-
-        <a href="#contador">⏳</a>
-
-        <a href="#historia">❤️</a>
-
-        <a href="#galeria">📸</a>
-
-        <a href="#ubicacion">📍</a>
-
-        <a href="#rsvp">✅</a>
-
-    </nav>
-
-    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 
 </body>
-
 </html>
