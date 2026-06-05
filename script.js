@@ -125,38 +125,6 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // =====================================
-// CONFIRMACIÓN DE ASISTENCIA
-// =====================================
-
-function cambiarAsistencia() {
-
-    const asistencia =
-        document.querySelector(
-            'input[name="asistencia"]:checked'
-        );
-
-    const acompanantes =
-        document.getElementById(
-            "acompanantes"
-        );
-
-    if (!asistencia || !acompanantes)
-        return;
-
-    if (asistencia.value === "no") {
-
-        acompanantes.value = "";
-        acompanantes.disabled = true;
-
-    } else {
-
-        acompanantes.disabled = false;
-
-    }
-
-}
-
-// =====================================
 // ENVIAR CONFIRMACIÓN
 // =====================================
 
