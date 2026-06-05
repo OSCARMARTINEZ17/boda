@@ -197,7 +197,7 @@
 
     </section>
 
-    <!-- CONFIRMACIÓN -->
+    <!-- CONFIRMACIÓN (MEJORADA) -->
 
     <section id="confirmacion" class="reveal">
 
@@ -209,43 +209,45 @@
             Tu respuesta es muy importante para nosotros ❤️
         </p>
 
-        <input
-            type="text"
-            id="nombre"
-            placeholder="Nombre completo">
+        <div class="confirmacion-card">
 
-        <div class="asistencia-opciones">
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Nombre completo">
 
-            <label>
+            <div class="asistencia-opciones">
 
-                <input
-                    type="radio"
-                    name="asistencia"
-                    value="si"
-                    checked
-                    onchange="cambiarAsistencia()">
+                <label class="opcion si">
 
-                ✅ Sí asistiré
+                    <input
+                        type="radio"
+                        name="asistencia"
+                        value="si"
+                        checked>
 
-            </label>
+                    <span>✅ Sí asistiré</span>
 
-            <label>
+                </label>
 
-                <input
-                    type="radio"
-                    name="asistencia"
-                    value="no"
-                    onchange="cambiarAsistencia()">
+                <label class="opcion no">
 
-                ❌ No podré asistir
+                    <input
+                        type="radio"
+                        name="asistencia"
+                        value="no">
 
-            </label>
+                    <span>❌ No podré asistir</span>
+
+                </label>
+
+            </div>
+
+            <button onclick="confirmarWhatsapp()" class="btn-confirmar">
+                📩 Enviar Respuesta
+            </button>
 
         </div>
-
-        <button onclick="confirmarWhatsapp()">
-            📩 Enviar Respuesta
-        </button>
 
     </section>
 
@@ -259,9 +261,7 @@
 
         <audio controls>
 
-            <source
-                src="musica/cancion.mp3"
-                type="audio/mpeg">
+            <source src="musica/cancion.mp3" type="audio/mpeg">
 
             Tu navegador no soporta audio.
 
@@ -302,25 +302,15 @@
 
     <nav class="bottom-nav">
 
-        <a href="#contador" title="Contador">
-            ⏳
-        </a>
+        <a href="#contador" title="Contador">⏳</a>
 
-        <a href="#historia" title="Historia">
-            ❤️
-        </a>
+        <a href="#historia" title="Historia">❤️</a>
 
-        <a href="#galeria" title="Galería">
-            📸
-        </a>
+        <a href="#galeria" title="Galería">📸</a>
 
-        <a href="#ubicacion" title="Ubicación">
-            📍
-        </a>
+        <a href="#ubicacion" title="Ubicación">📍</a>
 
-        <a href="#confirmacion" title="Confirmación">
-            ✅
-        </a>
+        <a href="#confirmacion" title="Confirmación">✅</a>
 
     </nav>
 

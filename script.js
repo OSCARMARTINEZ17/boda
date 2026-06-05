@@ -20,17 +20,14 @@ if (openInvitation && envelope) {
 
         }, 1000);
 
+        // Reproducir audio (si existe)
         const audio =
             document.querySelector("audio");
 
         if (audio) {
 
             audio.play().catch(() => {
-
-                console.log(
-                    "El navegador bloqueó la reproducción automática."
-                );
-
+                console.log("Autoplay bloqueado por el navegador");
             });
 
         }
@@ -40,83 +37,70 @@ if (openInvitation && envelope) {
 }
 
 // =====================================
-// CUENTA REGRESIVA
+// CONTADOR REGRESIVO
 // =====================================
 
 // CAMBIA ESTA FECHA POR LA REAL
 
-const weddingDate = new Date(
-    "December 20, 2026 16:00:00"
-).getTime();
+const weddingDate =
+    new Date("December 20, 2026 16:00:00").getTime();
 
 function updateCountdown() {
 
-    const now = new Date().getTime();
+    const now =
+        new Date().getTime();
 
-    const distance = weddingDate - now;
+    const distance =
+        weddingDate - now;
 
     const days =
-        Math.floor(
-            distance /
-            (1000 * 60 * 60 * 24)
-        );
+        Math.floor(distance / (1000 * 60 * 60 * 24));
 
     const hours =
-        Math.floor(
-            (distance %
-                (1000 * 60 * 60 * 24))
-            /
-            (1000 * 60 * 60)
-        );
+        Math.floor((distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60));
 
     const minutes =
-        Math.floor(
-            (distance %
-                (1000 * 60 * 60))
-            /
-            (1000 * 60)
-        );
+        Math.floor((distance % (1000 * 60 * 60)) /
+        (1000 * 60));
 
     const seconds =
-        Math.floor(
-            (distance %
-                (1000 * 60))
-            /
-            1000
-        );
+        Math.floor((distance % (1000 * 60)) /
+        1000);
 
-    const daysElement =
+    const daysEl =
         document.getElementById("days");
 
-    const hoursElement =
+    const hoursEl =
         document.getElementById("hours");
 
-    const minutesElement =
+    const minutesEl =
         document.getElementById("minutes");
 
-    const secondsElement =
+    const secondsEl =
         document.getElementById("seconds");
 
     if (
-        daysElement &&
-        hoursElement &&
-        minutesElement &&
-        secondsElement
-    ) {
+        !daysEl ||
+        !hoursEl ||
+        !minutesEl ||
+        !secondsEl
+    ) return;
 
-        daysElement.textContent =
-            distance > 0 ? days : 0;
+    if (distance <= 0) {
 
-        hoursElement.textContent =
-            distance > 0 ? hours : 0;
+        daysEl.textContent = 0;
+        hoursEl.textContent = 0;
+        minutesEl.textContent = 0;
+        secondsEl.textContent = 0;
 
-        minutesElement.textContent =
-            distance > 0 ? minutes : 0;
-
-        secondsElement.textContent =
-            distance > 0 ? seconds : 0;
-
+        return;
     }
+
+    daysEl.textContent = days;
+    hoursEl.textContent = hours;
+    minutesEl.textContent = minutes;
+    secondsEl.textContent = seconds;
 
 }
 
@@ -125,38 +109,27 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // =====================================
-// ENVIAR CONFIRMACIÓN
+// CONFIRMACIÓN WHATSAPP
 // =====================================
 
 function confirmarWhatsapp() {
 
     const nombre =
-        document
-            .getElementById("nombre")
-            .value
-            .trim();
+        document.getElementById("nombre").value.trim();
 
     if (nombre === "") {
 
-        alert(
-            "Por favor ingresa tu nombre."
-        );
-
+        alert("Por favor ingresa tu nombre.");
         return;
 
     }
 
     const asistencia =
-        document.querySelector(
-            'input[name="asistencia"]:checked'
-        );
+        document.querySelector('input[name="asistencia"]:checked');
 
     if (!asistencia) {
 
-        alert(
-            "Selecciona una opción."
-        );
-
+        alert("Selecciona una opción de asistencia.");
         return;
 
     }
@@ -165,22 +138,12 @@ function confirmarWhatsapp() {
 
     if (asistencia.value === "si") {
 
-        const acompanantes =
-            document.getElementById(
-                "acompanantes"
-            );
-
-        const cantidad =
-            acompanantes.value || 0;
-
         mensaje =
 `💒 CONFIRMACIÓN DE ASISTENCIA
 
 Nombre: ${nombre}
 
 Asistencia: SÍ
-
-Número de acompañantes: ${cantidad}
 
 Nos vemos en la boda ❤️`;
 
@@ -193,7 +156,7 @@ Nombre: ${nombre}
 
 Asistencia: NO
 
-Lamentablemente no podré acompañarlos en este día tan especial.`;
+Lamentamos no poder contar contigo en este día especial.`;
 
     }
 
@@ -218,21 +181,15 @@ function crearCorazon() {
     heart.innerHTML = "❤️";
 
     heart.style.left =
-        Math.random() *
-            window.innerWidth +
-        "px";
+        Math.random() * window.innerWidth + "px";
 
     heart.style.fontSize =
-        Math.random() * 20 +
-        15 +
-        "px";
+        (Math.random() * 20 + 15) + "px";
 
     document.body.appendChild(heart);
 
     setTimeout(() => {
-
         heart.remove();
-
     }, 6000);
 
 }
@@ -240,92 +197,55 @@ function crearCorazon() {
 setInterval(crearCorazon, 1200);
 
 // =====================================
-// ANIMACIONES AL HACER SCROLL
+// ANIMACIÓN SCROLL
 // =====================================
 
-const revealElements =
-    document.querySelectorAll(
-        ".reveal"
-    );
+const elements =
+    document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
 
-    revealElements.forEach(
-        element => {
+    elements.forEach(el => {
 
-            const top =
-                element.getBoundingClientRect()
-                    .top;
+        const top =
+            el.getBoundingClientRect().top;
 
-            const visible =
-                window.innerHeight - 100;
+        const visible =
+            window.innerHeight - 100;
 
-            if (top < visible) {
+        if (top < visible) {
 
-                element.classList.add(
-                    "active"
-                );
-
-            }
+            el.classList.add("active");
 
         }
-    );
+
+    });
 
 }
 
-window.addEventListener(
-    "scroll",
-    revealOnScroll
-);
+window.addEventListener("scroll", revealOnScroll);
 
 revealOnScroll();
 
 // =====================================
-// SCROLL SUAVE
+// SCROLL SUAVE MENÚ
 // =====================================
 
-document
-    .querySelectorAll(
-        'a[href^="#"]'
-    )
-    .forEach(link => {
+document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-        link.addEventListener(
-            "click",
-            function (e) {
+    link.addEventListener("click", function (e) {
 
-                const target =
-                    document.querySelector(
-                        this.getAttribute(
-                            "href"
-                        )
-                    );
+        const target =
+            document.querySelector(this.getAttribute("href"));
 
-                if (!target) return;
+        if (!target) return;
 
-                e.preventDefault();
+        e.preventDefault();
 
-                target.scrollIntoView({
-
-                    behavior:
-                        "smooth"
-
-                });
-
-            }
-        );
+        target.scrollIntoView({
+            behavior: "smooth"
+        });
 
     });
 
-// =====================================
-// INICIALIZACIÓN
-// =====================================
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        cambiarAsistencia();
-
-    }
-);
+});
