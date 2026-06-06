@@ -2,44 +2,35 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>María & Juan | Nuestra Boda</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <!-- SOBRE DE BIENVENIDA -->
-
     <div id="envelope">
-
         <div class="letter">
 
             <h2>💌</h2>
 
             <h1>María & Juan</h1>
 
-            <p>20 de Diciembre de 2026</p>
+            <p>25 Octubre 2025</p>
 
             <button id="openInvitation">
                 Abrir Invitación
             </button>
 
         </div>
-
     </div>
 
-    <!-- PORTADA -->
-
+    <!-- HERO -->
     <section class="hero reveal">
 
         <div class="hero-content">
@@ -48,9 +39,9 @@
 
             <h2>¡Nos Casamos!</h2>
 
-            <p>20 de Diciembre de 2026</p>
+            <p>25 Octubre 2025</p>
 
-            <a href="#contador" class="btn">
+            <a href="#calendario" class="btn">
                 Ver Invitación
             </a>
 
@@ -58,9 +49,66 @@
 
     </section>
 
-    <!-- CONTADOR -->
+    <!-- CALENDARIO -->
+    <section id="calendario" class="reveal wedding-card">
 
-    <section id="contador" class="reveal">
+        <h2 class="section-title">
+            25 Octubre 2025
+        </h2>
+
+        <p class="subtitle">
+            DO LUN MAR MIE JUE VIE SAB
+        </p>
+
+        <div class="calendar">
+
+            <div></div>
+            <div></div>
+            <div></div>
+
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+            <div>17</div>
+            <div>18</div>
+
+            <div>19</div>
+            <div>20</div>
+            <div>21</div>
+            <div>22</div>
+            <div>23</div>
+            <div>24</div>
+
+            <div class="heart-day">25</div>
+
+            <div>26</div>
+            <div>27</div>
+            <div>28</div>
+            <div>29</div>
+            <div>30</div>
+            <div>31</div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTADOR -->
+    <section class="reveal">
 
         <h2 class="section-title">
             Faltan
@@ -70,22 +118,74 @@
 
             <div class="box">
                 <span id="days">0</span>
-                <p>Días</p>
+                Días
             </div>
 
             <div class="box">
                 <span id="hours">0</span>
-                <p>Horas</p>
+                Horas
             </div>
 
             <div class="box">
                 <span id="minutes">0</span>
-                <p>Minutos</p>
+                Minutos
             </div>
 
             <div class="box">
                 <span id="seconds">0</span>
-                <p>Segundos</p>
+                Segundos
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ITINERARIO -->
+    <section class="reveal">
+
+        <h2 class="section-title">
+            Itinerario del Gran Día
+        </h2>
+
+        <p class="story">
+            Queremos compartir contigo cada momento especial
+            de nuestra celebración.
+        </p>
+
+        <br>
+
+        <div class="timeline">
+
+            <div class="event">
+
+                <h3>⛪ Ceremonia Religiosa</h3>
+
+                <p>Iglesia Cristo Resucitado</p>
+
+                <span>4:00 P.M.</span>
+
+                <br><br>
+
+                <button onclick="window.open('https://maps.google.com','_blank')">
+                    📍 Ver ubicación
+                </button>
+
+            </div>
+
+            <div class="event">
+
+                <h3>🥂 Recepción</h3>
+
+                <p>Restaurante Xixola</p>
+
+                <span>7:00 P.M.</span>
+
+                <br><br>
+
+                <button onclick="window.open('https://maps.google.com','_blank')">
+                    📍 Ver ubicación
+                </button>
+
             </div>
 
         </div>
@@ -93,7 +193,6 @@
     </section>
 
     <!-- HISTORIA -->
-
     <section id="historia" class="reveal">
 
         <h2 class="section-title">
@@ -101,19 +200,14 @@
         </h2>
 
         <p class="story">
-
             Después de compartir momentos inolvidables,
-            aventuras, sueños y muchísimas sonrisas,
-            hemos decidido unir nuestras vidas para siempre.
-
-            Queremos celebrar este día tan especial contigo.
-
+            aventuras y sueños, hemos decidido unir
+            nuestras vidas para siempre ❤️
         </p>
 
     </section>
 
     <!-- GALERÍA -->
-
     <section id="galeria" class="reveal">
 
         <h2 class="section-title">
@@ -122,129 +216,112 @@
 
         <div class="gallery">
 
-            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800"
-                alt="Momento especial 1">
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800" alt="Foto 1">
 
-            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800"
-                alt="Momento especial 2">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800" alt="Foto 2">
 
-            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=800"
-                alt="Momento especial 3">
+            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=800" alt="Foto 3">
 
-            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800"
-                alt="Momento especial 4">
+            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800" alt="Foto 4">
 
         </div>
 
     </section>
 
-    <!-- DETALLES DEL EVENTO -->
+    <!-- DRESS CODE -->
+    <section class="reveal dresscode">
 
-    <section id="evento" class="reveal">
+        <h2 class="section-title">Código de Vestimenta</h2>
 
-        <h2 class="section-title">
-            Detalles del Evento
-        </h2>
+        <span class="dresscode-badge">✦ Formal Elegante ✦</span>
 
-        <div class="cards">
+        <div class="dresscode-cards">
 
-            <div class="card">
-
-                <h3>💒 Ceremonia</h3>
-
-                <p>4:00 PM</p>
-
-                <p>Iglesia San José</p>
-
+            <div class="dresscode-card">
+                <span class="dresscode-icon">👗</span>
+                <h3>Mujeres</h3>
+                <p>Vestido largo o cóctel en tonos tierra, verde o nude</p>
+                <div class="color-chips">
+                    <div class="chip" style="background:#c8a97e"></div>
+                    <div class="chip" style="background:#8e9e7e"></div>
+                    <div class="chip" style="background:#d4c4b0"></div>
+                    <div class="chip" style="background:#b08070"></div>
+                </div>
             </div>
 
-            <div class="card">
-
-                <h3>🎉 Recepción</h3>
-
-                <p>7:00 PM</p>
-
-                <p>Salón Los Olivos</p>
-
+            <div class="dresscode-card">
+                <span class="dresscode-icon">🤵</span>
+                <h3>Hombres</h3>
+                <p>Traje formal o smoking en tonos oscuros o neutros</p>
+                <div class="color-chips">
+                    <div class="chip" style="background:#3a3a3a"></div>
+                    <div class="chip" style="background:#5a5a7a"></div>
+                    <div class="chip" style="background:#6e5a48"></div>
+                    <div class="chip" style="background:#8a8a8a"></div>
+                </div>
             </div>
 
         </div>
 
-    </section>
+        <div class="dresscode-divider">por favor evitar</div>
 
-    <!-- UBICACIÓN -->
+        <div class="dresscode-avoid">
+            <span>🚫 Blanco / Marfil</span>
+            <span>🚫 Negro total</span>
+            <span>🚫 Ropa casual</span>
+        </div>
 
-    <section id="ubicacion" class="reveal">
-
-        <h2 class="section-title">
-            Ubicación
-        </h2>
-
-        <iframe
-            src="https://maps.google.com/maps?q=Bogota&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            loading="lazy">
-        </iframe>
-
-        <br><br>
-
-        <a href="https://maps.google.com/?q=Bogota"
-            target="_blank"
-            class="btn">
-
-            📍 Cómo Llegar
-
-        </a>
-
-    </section>
-
-    <!-- CONFIRMACIÓN (MEJORADA) -->
-
-    <section id="confirmacion" class="reveal">
-
-        <h2 class="section-title">
-            Confirma tu Asistencia
-        </h2>
-
-        <p class="texto-confirmacion">
-            Tu respuesta es muy importante para nosotros ❤️
+        <p class="note">
+            ✨ Lo más importante es que te sientas cómodo(a) y espléndido(a)
+            para disfrutar este día tan especial con nosotros.
         </p>
 
-        <div class="confirmacion-card">
+    </section>
 
-            <input
-                type="text"
-                id="nombre"
-                placeholder="Nombre completo">
+    <br>
 
-            <div class="asistencia-opciones">
+    <!-- LLUVIA DE SOBRES -->
+    <section class="reveal wedding-card sobres-section">
 
-                <label class="opcion si">
+        <h2 class="section-title">Lluvia de Sobres</h2>
 
-                    <input
-                        type="radio"
-                        name="asistencia"
-                        value="si"
-                        checked>
+        <span class="envelope-float">✉️</span>
 
-                    <span>✅ Sí asistiré</span>
+        <p class="sobres-main">
+            Tu <strong>presencia</strong> es nuestro mejor regalo.
+        </p>
 
-                </label>
+        <p class="story">
+            Si deseas tener un detalle adicional con nosotros,
+            tendremos una lluvia de sobres durante la celebración.
+            Estaremos encantados de recibirlo con todo el amor. 🤍
+        </p>
 
-                <label class="opcion no">
+        <span class="sobres-hearts">✦ ✦ ✦</span>
 
-                    <input
-                        type="radio"
-                        name="asistencia"
-                        value="no">
+    </section>
 
-                    <span>❌ No podré asistir</span>
+    <!-- CONFIRMACIÓN -->
+    <section class="reveal confirm-double">
 
-                </label>
+        <h2 class="section-title">
+            Confirmación de Asistencia
+        </h2>
 
-            </div>
+        <p>
+            Elige con quién deseas confirmar
+        </p>
 
-            <button onclick="confirmarWhatsapp()" class="btn-confirmar">
-                📩 Enviar Respuesta
+        <br>
+
+        <div class="confirm-buttons">
+
+            <button onclick="confirmarAsistencia('novio')">
+                💚 Con el Novio
+            </button>
+
+            <button onclick="confirmarAsistencia('novia')">
+                💜 Con la Novia
             </button>
 
         </div>
@@ -252,25 +329,52 @@
     </section>
 
     <!-- CANCIÓN -->
+    <section class="reveal" id="cancion">
 
-    <section class="reveal">
+        <h2 class="section-title">Nuestra Canción</h2>
 
-        <h2 class="section-title">
-            Nuestra Canción
-        </h2>
+        <div class="player-card">
 
-        <audio controls>
+            <div class="player-top">
 
-            <source src="musica/cancion.mp3" type="audio/mpeg">
+                <div class="vinyl" id="vinyl">
+                    <div class="vinyl-ring r1"></div>
+                    <div class="vinyl-ring r2"></div>
+                    <div class="vinyl-ring r3"></div>
+                    <div class="vinyl-center"></div>
+                </div>
 
-            Tu navegador no soporta audio.
+                <div class="player-info">
+                    <p class="player-song">Nombre de la Canción</p>
+                    <p class="player-artist">Artista</p>
+                    <p class="player-label">♪ Nuestra canción especial</p>
+                </div>
 
-        </audio>
+            </div>
+
+            <audio id="audio" src="multimedia/cancion.mp3"></audio>
+
+            <div class="player-progress-wrap">
+                <div class="player-progress" id="progressBar">
+                    <div class="player-progress-fill" id="progressFill"></div>
+                </div>
+                <div class="player-times">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalTime">0:00</span>
+                </div>
+            </div>
+
+            <div class="player-controls">
+                <button class="player-btn-ghost" id="btnRewind" title="Retroceder 10s">⟪</button>
+                <button class="player-btn-play" id="btnPlay">▶</button>
+                <button class="player-btn-ghost" id="btnForward" title="Adelantar 10s">⟫</button>
+            </div>
+
+        </div>
 
     </section>
 
     <!-- MENSAJE FINAL -->
-
     <section class="reveal">
 
         <h2 class="section-title">
@@ -278,39 +382,36 @@
         </h2>
 
         <p class="story">
-
-            Gracias por ser parte de nuestra historia.
-
-            Esperamos compartir contigo este día tan especial
-            y crear recuerdos inolvidables juntos. ❤️
-
+            Gracias por acompañarnos en este momento tan importante
+            de nuestras vidas ❤️
         </p>
 
     </section>
 
-    <!-- FOOTER -->
+    <!-- LLUVIA DE SOBRES ANIMADA -->
+    <div id="envelopes"></div>
 
+    <!-- FOOTER -->
     <footer>
 
+        <h2>María & Juan</h2>
+
         <p>
-            Con amor ❤️ María & Juan
+            Gracias por acompañarnos en este día tan especial.
+        </p>
+
+        <p>
+            25 Octubre 2025 ❤️
         </p>
 
     </footer>
 
     <!-- MENÚ FLOTANTE -->
-
     <nav class="bottom-nav">
 
-        <a href="#contador" title="Contador">⏳</a>
-
-        <a href="#historia" title="Historia">❤️</a>
-
-        <a href="#galeria" title="Galería">📸</a>
-
-        <a href="#ubicacion" title="Ubicación">📍</a>
-
-        <a href="#confirmacion" title="Confirmación">✅</a>
+        <a href="#calendario">📅</a>
+        <a href="#historia">❤️</a>
+        <a href="#galeria">📸</a>
 
     </nav>
 

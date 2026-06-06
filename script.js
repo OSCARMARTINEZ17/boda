@@ -15,18 +15,15 @@ if (openInvitation && envelope) {
         envelope.style.opacity = "0";
 
         setTimeout(() => {
-
             envelope.style.display = "none";
-
         }, 1000);
 
-        // Reproducir audio (si existe)
-        const audio =
-            document.querySelector("audio");
+        const audioEl =
+            document.getElementById("audio");
 
-        if (audio) {
+        if (audioEl) {
 
-            audio.play().catch(() => {
+            audioEl.play().catch(() => {
                 console.log("Autoplay bloqueado por el navegador");
             });
 
@@ -39,8 +36,6 @@ if (openInvitation && envelope) {
 // =====================================
 // CONTADOR REGRESIVO
 // =====================================
-
-// CAMBIA ESTA FECHA POR LA REAL
 
 const weddingDate =
     new Date("December 20, 2026 16:00:00").getTime();
@@ -105,11 +100,10 @@ function updateCountdown() {
 }
 
 updateCountdown();
-
 setInterval(updateCountdown, 1000);
 
 // =====================================
-// CONFIRMACIÓN WHATSAPP
+// CONFIRMACIÓN WHATSAPP FORMULARIO
 // =====================================
 
 function confirmarWhatsapp() {
@@ -168,6 +162,26 @@ Lamentamos no poder contar contigo en este día especial.`;
 }
 
 // =====================================
+// CONFIRMACIÓN DOBLE
+// =====================================
+
+function confirmarAsistencia(tipo) {
+
+    const mensaje =
+`💍 CONFIRMACIÓN DE ASISTENCIA
+
+Tipo: ${tipo}
+
+Hola, confirmo mi asistencia a la boda ❤️`;
+
+    const url =
+        `https://api.whatsapp.com/send?phone=573143783740&text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
+
+}
+
+// =====================================
 // CORAZONES FLOTANTES
 // =====================================
 
@@ -197,6 +211,43 @@ function crearCorazon() {
 setInterval(crearCorazon, 1200);
 
 // =====================================
+// LLUVIA DE SOBRES
+// =====================================
+
+function crearSobre() {
+
+    const container =
+        document.getElementById("envelopes");
+
+    if (!container) return;
+
+    const sobre =
+        document.createElement("div");
+
+    sobre.classList.add("envelope");
+
+    sobre.innerHTML = "✉️";
+
+    sobre.style.left =
+        Math.random() * 100 + "vw";
+
+    sobre.style.fontSize =
+        (Math.random() * 20 + 10) + "px";
+
+    sobre.style.animationDuration =
+        (Math.random() * 3 + 3) + "s";
+
+    container.appendChild(sobre);
+
+    setTimeout(() => {
+        sobre.remove();
+    }, 6000);
+
+}
+
+setInterval(crearSobre, 400);
+
+// =====================================
 // ANIMACIÓN SCROLL
 // =====================================
 
@@ -214,9 +265,7 @@ function revealOnScroll() {
             window.innerHeight - 100;
 
         if (top < visible) {
-
             el.classList.add("active");
-
         }
 
     });
@@ -236,7 +285,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", function (e) {
 
         const target =
-            document.querySelector(this.getAttribute("href"));
+            document.querySelector(
+                this.getAttribute("href")
+            );
 
         if (!target) return;
 
@@ -249,3 +300,137 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
 
 });
+
+// =====================================
+// REPRODUCTOR VINILO
+// =====================================
+
+const audioPlayer  = document.getElementById("audio");
+const btnPlay      = document.getElementById("btnPlay");
+const btnRewind    = document.getElementById("btnRewind");
+const btnForward   = document.getElementById("btnForward");
+const progressFill = document.getElementById("progressFill");
+const progressBar  = document.getElementById("progressBar");
+const currentTime  = document.getElementById("currentTime");
+const totalTime    = document.getElementById("totalTime");
+const vinylDisc    = document.getElementById("vinyl");
+
+function fmt(s) {
+
+    if (!s || isNaN(s)) return "0:00";
+
+    const m   = Math.floor(s / 60);
+    const sec = Math.floor(s % 60);
+
+    return m + ":" + (sec < 10 ? "0" : "") + sec;
+
+}
+
+if (btnPlay && audioPlayer) {
+
+    btnPlay.addEventListener("click", () => {
+
+        if (audioPlayer.paused) {
+
+            audioPlayer.play().catch(() => {
+                console.log("Reproducción bloqueada por el navegador");
+            });
+
+            btnPlay.textContent = "❚❚";
+
+            if (vinylDisc) {
+                vinylDisc.classList.add("spinning");
+            }
+
+        } else {
+
+            audioPlayer.pause();
+
+            btnPlay.textContent = "▶";
+
+            if (vinylDisc) {
+                vinylDisc.classList.remove("spinning");
+            }
+
+        }
+
+    });
+
+}
+
+if (btnRewind && audioPlayer) {
+
+    btnRewind.addEventListener("click", () => {
+
+        audioPlayer.currentTime =
+            Math.max(0, audioPlayer.currentTime - 10);
+
+    });
+
+}
+
+if (btnForward && audioPlayer) {
+
+    btnForward.addEventListener("click", () => {
+
+        audioPlayer.currentTime =
+            Math.min(
+                audioPlayer.duration || 0,
+                audioPlayer.currentTime + 10
+            );
+
+    });
+
+}
+
+if (audioPlayer) {
+
+    audioPlayer.addEventListener("loadedmetadata", () => {
+
+        if (totalTime) {
+            totalTime.textContent = fmt(audioPlayer.duration);
+        }
+
+    });
+
+    audioPlayer.addEventListener("timeupdate", () => {
+
+        const pct = audioPlayer.duration
+            ? (audioPlayer.currentTime / audioPlayer.duration) * 100
+            : 0;
+
+        if (progressFill) {
+            progressFill.style.width = pct + "%";
+        }
+
+        if (currentTime) {
+            currentTime.textContent = fmt(audioPlayer.currentTime);
+        }
+
+    });
+
+    audioPlayer.addEventListener("ended", () => {
+
+        if (btnPlay)      btnPlay.textContent       = "▶";
+        if (vinylDisc)    vinylDisc.classList.remove("spinning");
+        if (progressFill) progressFill.style.width  = "0%";
+        if (currentTime)  currentTime.textContent   = "0:00";
+
+    });
+
+}
+
+if (progressBar && audioPlayer) {
+
+    progressBar.addEventListener("click", (e) => {
+
+        const rect = progressBar.getBoundingClientRect();
+        const pct  = (e.clientX - rect.left) / rect.width;
+
+        if (audioPlayer.duration) {
+            audioPlayer.currentTime = pct * audioPlayer.duration;
+        }
+
+    });
+
+}
