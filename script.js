@@ -38,7 +38,7 @@ if (openInvitation && envelope) {
 // =====================================
 
 const weddingDate =
-    new Date("October 25, 2025 16:00:00").getTime();
+    new Date("October 25, 2026 16:00:00").getTime();
 
 function updateCountdown() {
 
