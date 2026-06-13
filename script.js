@@ -38,7 +38,7 @@ if (openInvitation && envelope) {
 // =====================================
 
 const weddingDate =
-    new Date("December 20, 2026 16:00:00").getTime();
+    new Date("October 25, 2025 16:00:00").getTime();
 
 function updateCountdown() {
 
@@ -47,21 +47,6 @@ function updateCountdown() {
 
     const distance =
         weddingDate - now;
-
-    const days =
-        Math.floor(distance / (1000 * 60 * 60 * 24));
-
-    const hours =
-        Math.floor((distance % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60));
-
-    const minutes =
-        Math.floor((distance % (1000 * 60 * 60)) /
-        (1000 * 60));
-
-    const seconds =
-        Math.floor((distance % (1000 * 60)) /
-        1000);
 
     const daysEl =
         document.getElementById("days");
@@ -90,7 +75,23 @@ function updateCountdown() {
         secondsEl.textContent = 0;
 
         return;
+
     }
+
+    const days =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours =
+        Math.floor((distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60));
+
+    const minutes =
+        Math.floor((distance % (1000 * 60 * 60)) /
+        (1000 * 60));
+
+    const seconds =
+        Math.floor((distance % (1000 * 60)) /
+        1000);
 
     daysEl.textContent = days;
     hoursEl.textContent = hours;
@@ -167,15 +168,15 @@ Lamentamos no poder contar contigo en este día especial.`;
 
 function confirmarAsistencia(tipo) {
 
+    const nombre = tipo === "novio" ? "Daniel" : "Erika";
+
     const mensaje =
-`💍 CONFIRMACIÓN DE ASISTENCIA
+`¡Hola ${nombre}! 💍
 
-Tipo: ${tipo}
-
-Hola, confirmo mi asistencia a la boda ❤️`;
+Confirmo mi asistencia a su boda el 25 de Octubre. ¡Nos vemos pronto! ❤️🎊`;
 
     const url =
-        `https://api.whatsapp.com/send?phone=573143783740&text=${encodeURIComponent(mensaje)}`;
+        `https://api.whatsapp.com/send?phone=573224717356&text=${encodeURIComponent(mensaje)}`;
 
     window.open(url, "_blank");
 
