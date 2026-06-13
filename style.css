@@ -518,35 +518,6 @@ footer{
 }
 
 /* =========================
-   BOTONES CONFIRMACIÓN DOBLE
-========================= */
-
-.confirm-double{
-    text-align:center;
-}
-
-.confirm-buttons{
-    display:flex;
-    gap:20px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.confirm-buttons button{
-    background:#d4af37;
-    color:white;
-    padding:15px 25px;
-    border:none;
-    border-radius:50px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.confirm-buttons button:hover{
-    transform:scale(1.05);
-}
-
-/* =========================
    LLUVIA DE SOBRES ANIMADA
 ========================= */
 
@@ -735,6 +706,98 @@ footer{
     .dc-g-card{
         width:100%;
         max-width:280px;
+    }
+}
+
+/* =========================
+   CONFIRMACIÓN — OPCIÓN B
+========================= */
+
+.confirm-section{
+    text-align:center;
+}
+
+.confirm-sub{
+    font-size:.9rem;
+    color:#888;
+    margin-bottom:2rem;
+}
+
+.confirm-cards{
+    display:flex;
+    gap:1.25rem;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.confirm-card{
+    background:white;
+    border:0.5px solid #eee;
+    border-radius:20px;
+    padding:2rem 1.75rem;
+    width:200px;
+    text-align:center;
+    box-shadow:0 4px 20px rgba(0,0,0,.06);
+    transition:transform .2s;
+}
+
+.confirm-card:hover{
+    transform:translateY(-4px);
+}
+
+.confirm-icon{
+    font-size:2.8rem;
+    display:block;
+    margin-bottom:.75rem;
+}
+
+.confirm-name{
+    font-size:1.1rem;
+    font-weight:600;
+    color:#333;
+    margin-bottom:.2rem;
+}
+
+.confirm-role{
+    font-size:.78rem;
+    color:#aaa;
+    margin-bottom:1.25rem;
+}
+
+.confirm-btn-novio,
+.confirm-btn-novia{
+    width:100%;
+    padding:11px 0;
+    border:none;
+    border-radius:50px;
+    font-size:.85rem;
+    font-weight:500;
+    cursor:pointer;
+    transition:.2s;
+    font-family:'Poppins',sans-serif;
+}
+
+.confirm-btn-novio{
+    background:#25d366;
+    color:white;
+}
+
+.confirm-btn-novia{
+    background:#9b59b6;
+    color:white;
+}
+
+.confirm-btn-novio:hover,
+.confirm-btn-novia:hover{
+    transform:scale(1.05);
+    opacity:.92;
+}
+
+@media(max-width:480px){
+
+    .confirm-card{
+        width:160px;
+        padding:1.5rem 1.25rem;
     }
 }
 

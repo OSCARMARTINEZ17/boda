@@ -296,28 +296,34 @@
 
     </section>
 
-    <!-- CONFIRMACIÓN -->
-    <section class="reveal confirm-double">
+    <!-- CONFIRMACIÓN — OPCIÓN B -->
+    <section class="reveal confirm-section">
 
-        <h2 class="section-title">
-            Confirmación de Asistencia
-        </h2>
+        <h2 class="section-title">Confirmación de Asistencia</h2>
 
-        <p>
+        <p class="confirm-sub">
             Elige con quién deseas confirmar
         </p>
 
-        <br>
+        <div class="confirm-cards">
 
-        <div class="confirm-buttons">
+            <div class="confirm-card">
+                <span class="confirm-icon">🤵</span>
+                <p class="confirm-name">Daniel</p>
+                <p class="confirm-role">El Novio</p>
+                <button class="confirm-btn-novio" onclick="confirmarAsistencia('novio')">
+                    💚 Confirmar
+                </button>
+            </div>
 
-            <button onclick="confirmarAsistencia('novio')">
-                💚 Con el Novio
-            </button>
-
-            <button onclick="confirmarAsistencia('novia')">
-                💜 Con la Novia
-            </button>
+            <div class="confirm-card">
+                <span class="confirm-icon">👰</span>
+                <p class="confirm-name">Erika</p>
+                <p class="confirm-role">La Novia</p>
+                <button class="confirm-btn-novia" onclick="confirmarAsistencia('novia')">
+                    💜 Confirmar
+                </button>
+            </div>
 
         </div>
 

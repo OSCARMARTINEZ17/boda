@@ -104,65 +104,6 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // =====================================
-// CONFIRMACIÓN WHATSAPP FORMULARIO
-// =====================================
-
-function confirmarWhatsapp() {
-
-    const nombre =
-        document.getElementById("nombre").value.trim();
-
-    if (nombre === "") {
-
-        alert("Por favor ingresa tu nombre.");
-        return;
-
-    }
-
-    const asistencia =
-        document.querySelector('input[name="asistencia"]:checked');
-
-    if (!asistencia) {
-
-        alert("Selecciona una opción de asistencia.");
-        return;
-
-    }
-
-    let mensaje = "";
-
-    if (asistencia.value === "si") {
-
-        mensaje =
-`💒 CONFIRMACIÓN DE ASISTENCIA
-
-Nombre: ${nombre}
-
-Asistencia: SÍ
-
-Nos vemos en la boda ❤️`;
-
-    } else {
-
-        mensaje =
-`💒 CONFIRMACIÓN DE ASISTENCIA
-
-Nombre: ${nombre}
-
-Asistencia: NO
-
-Lamentamos no poder contar contigo en este día especial.`;
-
-    }
-
-    const url =
-        `https://api.whatsapp.com/send?phone=573143783740&text=${encodeURIComponent(mensaje)}`;
-
-    window.open(url, "_blank");
-
-}
-
-// =====================================
 // CONFIRMACIÓN DOBLE
 // =====================================
 
@@ -170,13 +111,20 @@ function confirmarAsistencia(tipo) {
 
     const nombre = tipo === "novio" ? "Daniel" : "Erika";
 
+    const numero = tipo === "novio" ? "573224717356" : "573143783740";
+
     const mensaje =
 `¡Hola ${nombre}! 💍
 
 Confirmo mi asistencia a su boda el 25 de Octubre. ¡Nos vemos pronto! ❤️🎊`;
 
-    const url =
-        `https://api.whatsapp.com/send?phone=573224717356&text=${encodeURIComponent(mensaje)}`;
+    const texto = encodeURIComponent(mensaje);
+
+    const esCelular = /Android|iPhone|iPad/i.test(navigator.userAgent);
+
+    const url = esCelular
+        ? `whatsapp://send?phone=${numero}&text=${texto}`
+        : `https://wa.me/${numero}?text=${texto}`;
 
     window.open(url, "_blank");
 
